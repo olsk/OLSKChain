@@ -11,10 +11,10 @@ const mod = {
 			return Object.keys(inputData).reduce(function (coll, item) {
 				return Object.assign(coll, typeof inputData[item] === 'function' ? {
 					[item]: function () {
-						const args = arguments;
+						const _arguments = arguments;
 
 						_OLSKChainQueue.push(function () {
-							return inputData[item](...args);
+							return inputData[item](..._arguments);
 						});
 
 						return _OLSKChainGatherObject();
