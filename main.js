@@ -9,7 +9,7 @@ const mod = {
 
 		const _OLSKChainGatherObject = function () {
 			return Object.keys(inputData).reduce(function (coll, item) {
-				return Object.assign(coll, typeof inputData[item] === 'function' && !item.match('OLSKChain') ? {
+				return Object.assign(coll, typeof inputData[item] === 'function' ? {
 					[item]: function () {
 						const args = arguments;
 
